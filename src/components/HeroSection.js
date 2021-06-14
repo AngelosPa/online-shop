@@ -8,9 +8,18 @@ const HeroSection = () => {
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [cart, setCart] = useState([]);
-  const bill = () =>
-    setTotalBill(cart.reduce((acc, cur) => acc + cur.price, 0));
-  console.log(totalBill);
+
+  const addToCart = (info) => {
+    setCart((prev) => [...prev, info]);
+  };
+
+  const bill = () => {
+    console.log(cart);
+    const total = cart.reduce((acc, cur) => acc + cur.price, 0);
+    setTotalBill(total);
+    console.log(total);
+  };
+
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
     lookUp();
@@ -81,7 +90,7 @@ const HeroSection = () => {
         {" "}
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
         {/* <ProductList data={userInput ? filteredData : data} /> */}
-        <ProductList data={filteredData} />
+        <ProductList data={filteredData} addToCart={addToCart} />
       </div>
     </div>
   );
