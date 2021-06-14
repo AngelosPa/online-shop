@@ -12,23 +12,30 @@ const HeroSection = () => {
     setTotalBill(cart.reduce((acc, cur) => acc + cur.price, 0));
   console.log(totalBill);
   const changeHandle = (e) => {
-    setUserInput(e.target.value);
+    setUserInput(() => e.target.value);
+    lookUp();
   };
   //for the searchbar
   const lookUp = () => {
-    const userText = userInput.toLocaleLowerCase().trim();
+    const userText = userInput.toLowerCase().trim();
     const userTextLength = userText.length;
     // const searchText = userText ? userText : "";
-    let newArr = data.filter((item) => {
-      const slicedProductName = item.productName.slice(0, userTextLength);
-      return slicedProductName === userText;
-    });
-    setFilteredData(newArr);
+
+    if (userTextLength === 0) {
+      console.log("input", userTextLength);
+      setFilteredData([]);
+    } else {
+      let newArr = data.filter((item) => {
+        const slicedProductName = item.productName.slice(0, userTextLength);
+        return slicedProductName === userText;
+      });
+      setFilteredData(newArr);
+    }
   };
+
   // to stop the fort thing
   const handleSubmit = (e) => {
     e.preventDefault();
-    lookUp();
   };
   return (
     <div className="hero-section">
