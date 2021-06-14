@@ -1,5 +1,8 @@
 // Mixins
 
-// @mixin name {
-//   // your rules
-// }
+@mixin flexthing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}

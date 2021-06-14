@@ -1,1 +1,23 @@
 //Import Component files
+@import "./buttons";
+@import "./searchbar";
+
+h2 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+a {
+  margin: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+input::placeholder {
+  text-align: center;
+}

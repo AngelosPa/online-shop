@@ -5,3 +5,133 @@
   padding: 0;
   font-size: 18px;
 }
+
+body {
+  @include flexthing;
+  flex-direction: column;
+  // width: 100vw;
+  // height: 100vh;
+}
+.body-container {
+  @include flexthing;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #e3f1e3;
+  //hero section par (navbar , searchbar , search results)
+  .hero-section {
+    nav {
+      @include flexthing;
+      justify-content: space-between;
+      .hamburgers-menus {
+        width: 100px;
+        height: 100px;
+      }
+
+      height: 30%;
+      background-color: #007e00;
+    }
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 35vh;
+    background-color: #63b163;
+    .searchbarteam {
+      display: block;
+      position: relative;
+      background-color: rgb(75, 207, 75);
+    }
+
+    ul {
+      @include flexthing;
+      justify-content: space-around;
+      flex-direction: row;
+
+      width: 80vw;
+    }
+
+    .space-for-results {
+      background-color: green;
+      position: absolute;
+      top: 30%;
+      @include flexthing;
+      width: 100%;
+    }
+  }
+
+  .mainmenu {
+    @include flexthing;
+    width: 100vw;
+    height: 58vh;
+    .item {
+      @include flexthing;
+      width: 30%;
+      height: 30%;
+      border: rgb(0, 0, 0) 2px solid;
+      margin: 10px;
+    }
+  }
+  footer {
+    @include flexthing;
+    width: 100vw;
+    height: 5vh;
+    background-color: #004b00;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .body-container {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+
+    //hero section par (navbar , searchbar , search results)
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+
+      .searchbarteam {
+        display: block;
+        position: relative;
+      }
+      h2 {
+        text-align: center;
+      }
+      ul {
+        display: none;
+        //for now , i have to solve the crazy searchbar issue
+      }
+
+      .space-for-results {
+        position: absolute;
+        top: 30%;
+        @include flexthing;
+        width: 100%;
+      }
+    }
+
+    .mainmenu {
+      @include flexthing;
+
+      margin: 40vh 0 20vh 0;
+      height: auto;
+      width: 100vw;
+
+      .item {
+        @include flexthing;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+        border: rgb(0, 0, 0) 2px solid;
+      }
+    }
+    footer {
+      @include flexthing;
+      width: 100vw;
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+}
