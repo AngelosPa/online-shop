@@ -1,24 +1,20 @@
 // import React from "react";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Data from "../data.json";
-import ProductList from "./ProductList";
+
+import ProductItem from "./innercomponents/Productitem";
+import { StoreContext } from "../context";
 const HeroSection = () => {
-  const [totalBill, setTotalBill] = useState(0);
   const [data, setData] = useState(Data);
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const [cart, setCart] = useState([]);
+  const [totalBill, setTotalBill] = useState(0);
+  const store = useContext(StoreContext);
+  //   const [cart, setCart] = useState([]);
 
-  const addToCart = (info) => {
-    setCart((prev) => [...prev, info]);
-  };
-
-  const bill = () => {
-    console.log(cart);
-    const total = cart.reduce((acc, cur) => acc + cur.price, 0);
-    setTotalBill(total);
-    console.log(total);
-  };
+  const items = store.data.map((item, i) => (
+    <ProductItem key={i} info={item} addToCart={store.addToCart} />
+  ));
 
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
@@ -67,7 +63,9 @@ const HeroSection = () => {
           </li>
           <li>
             <div>
-              <button onClick={bill}>Total bill</button> <h6>{totalBill}€</h6>
+              <button onClick={() => setTotalBill(store.bill())}>
+                Total bill
+              </button>
             </div>
           </li>
         </ul>
@@ -90,7 +88,7 @@ const HeroSection = () => {
         {" "}
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
         {/* <ProductList data={userInput ? filteredData : data} /> */}
-        <ProductList data={filteredData} addToCart={addToCart} />
+        {/* <ProductList data={filteredData} addToCart={addToCart} /> */}
       </div>
     </div>
   );

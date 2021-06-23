@@ -63,6 +63,12 @@ body {
     @include flexthing;
     width: 100vw;
     height: 58vh;
+    .hadis {
+      width: 100%;
+      height: 80%;
+      border: 2px red dashed;
+      display: none;
+    }
     .item {
       @include flexthing;
       width: 30%;
