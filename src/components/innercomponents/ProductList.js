@@ -1,23 +1,19 @@
 import React, { useState, useContext } from "react";
 import ProductItem from "../innercomponents/Productitem";
 import { StoreContext } from "../../context";
-const ProductList = () => {
+const ProductList = (props) => {
   const store = useContext(StoreContext);
-  //   const [cart, setCart] = useState([]);
+
   const [totalBill, setTotalBill] = useState(0);
 
   const items = store.data.map((item, i) => (
     <ProductItem key={i} info={item} addToCart={store.addToCart} />
   ));
-  // store.print("Hadi");
+
   return (
-    <React.Fragment>
-      <div>
-        <button onClick={() => setTotalBill(store.bill())}>Total bill</button>
-        <h6>{totalBill}€</h6>
-      </div>
-      <ul>{items}</ul>
-    </React.Fragment>
+    <div className="carusel">
+      <ul>{items[props.val]}</ul>
+    </div>
   );
 };
 export default ProductList;

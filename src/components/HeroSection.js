@@ -10,7 +10,6 @@ const HeroSection = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [totalBill, setTotalBill] = useState(0);
   const store = useContext(StoreContext);
-  //   const [cart, setCart] = useState([]);
 
   const items = store.data.map((item, i) => (
     <ProductItem key={i} info={item} addToCart={store.addToCart} />
@@ -20,7 +19,7 @@ const HeroSection = () => {
     setUserInput(() => e.target.value);
     lookUp();
   };
-  //for the searchbar
+  //for the searchbar -> RE CREATE IT INSIDE THE CONTEXT FOLDER
   const lookUp = () => {
     const userText = userInput.toLowerCase().trim();
     const userTextLength = userText.length;
@@ -66,6 +65,7 @@ const HeroSection = () => {
               <button onClick={() => setTotalBill(store.bill())}>
                 Total bill
               </button>
+              <h6>{totalBill}€</h6>
             </div>
           </li>
         </ul>

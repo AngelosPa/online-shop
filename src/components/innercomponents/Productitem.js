@@ -9,9 +9,9 @@ const ProductItem = ({ info, addToCart }) => {
       <h5>{price}€</h5>
       <h6>{inventory} items in stock</h6>
       <button
+        className="cardbutton"
         disabled={inventory === 0}
         onClick={() => {
-          console.log(info);
           addToCart(info);
         }}
       >

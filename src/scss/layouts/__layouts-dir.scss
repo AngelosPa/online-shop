@@ -63,11 +63,25 @@ body {
     @include flexthing;
     width: 100vw;
     height: 58vh;
-    .hadis {
+    .carusel {
+      @include flexthing;
+      border: 2px rgb(97, 87, 87) solid;
+      width: 50%;
+      height: 80%;
+    }
+    .slider {
+      @include flexthing;
+      button:nth-last-child(n) {
+        margin: 1rem 3rem 1rem 3rem;
+        background-color: transparent;
+        border: none;
+      }
       width: 100%;
       height: 80%;
-      border: 2px red dashed;
-      display: none;
+    }
+    .cardbutton {
+      background-color: green !important;
+      padding: 0.3rem;
     }
     .item {
       @include flexthing;
