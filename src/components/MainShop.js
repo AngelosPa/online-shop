@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Store } from "../context";
 import ProductList from "./innercomponents/ProductList";
 import Beauty from "./innercomponents/Beauty";
@@ -30,30 +30,42 @@ const MainShop = () => {
         </div>
       </div>
       <Router>
+        <Link className="item" to="/kids">
+          <p>For the Kids</p>
+        </Link>
+        <Link className="item" to="/car">
+          <p>Car accessories</p>
+        </Link>
+        <Link className="item" to="/beauty">
+          <p>Beauty Products</p>
+        </Link>
+        <Link className="item" to="/technology">
+          <p>all about technology</p>
+        </Link>
+        <Link className="item" to="/wellness">
+          <p>Wellness and Health</p>
+        </Link>
+        <Link className="item" to="/sports">
+          <p>Sports</p>
+        </Link>
         <Switch>
           <Route path="/kids" exact>
             <Kids />
-            <div className="item">for the kids</div>
           </Route>
           <Route path="/car" exact>
             <Car />
-            <div className="item">for the car</div>
           </Route>
           <Route path="/beauty" exact>
             <Beauty />
-            <div className="item">beauty products</div>
           </Route>
           <Route path="/technology" exact>
             <Technologie />
-            <div className="item">technology</div>
           </Route>
           <Route path="/wellness" exact>
             <Wellness />
-            <div className="item">wellness</div>
           </Route>
           <Route path="/sports" exact>
             <Sports />
-            <div className="item">Sports</div>
           </Route>
         </Switch>
       </Router>

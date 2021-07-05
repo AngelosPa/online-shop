@@ -5,7 +5,10 @@
   padding: 0;
   font-size: 18px;
 }
-
+.items {
+  width: 50%;
+  height: 50%;
+}
 body {
   @include flexthing;
   flex-direction: column;

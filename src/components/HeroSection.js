@@ -1,9 +1,10 @@
 // import React from "react";
 import React, { useState, useContext } from "react";
 import Data from "../data.json";
-import ProductList from "./innercomponents/ProductList";
+
 import ProductItem from "./innercomponents/Productitem";
 import { StoreContext } from "../context";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
   const [data, setData] = useState(Data);
   const [userInput, setUserInput] = useState("");
@@ -54,9 +55,7 @@ const HeroSection = () => {
         </div>
 
         <ul>
-          <li>
-            <a href="#">online shops</a>
-          </li>
+          <li></li>
 
           <li>
             <a href="#">contact us</a>

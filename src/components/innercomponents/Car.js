@@ -1,7 +1,7 @@
 import React from "react";
 
 function Car() {
-  return <div></div>;
+  return <div className="item">im car</div>;
 }
 
 export default Car;
