@@ -55,7 +55,9 @@ const HeroSection = () => {
         </div>
 
         <ul>
-          <li></li>
+          <li>
+            <a href="#">online shops</a>
+          </li>
 
           <li>
             <a href="#">contact us</a>

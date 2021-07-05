@@ -2,12 +2,7 @@ import React, { useState, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Store } from "../context";
 import ProductList from "./innercomponents/ProductList";
-import Beauty from "./innercomponents/Beauty";
-import Car from "./innercomponents/Car";
-import Kids from "./innercomponents/Kids";
-import Technologie from "./innercomponents/Technologie";
-import Wellness from "./innercomponents/Wellness";
-import Sports from "./innercomponents/Sports";
+
 const MainShop = () => {
   const [val, setVal] = useState(0);
 
@@ -45,29 +40,6 @@ const MainShop = () => {
         <Link className="item" to="/wellness">
           <p>Wellness and Health</p>
         </Link>
-        <Link className="item" to="/sports">
-          <p>Sports</p>
-        </Link>
-        <Switch>
-          <Route path="/kids" exact>
-            <Kids />
-          </Route>
-          <Route path="/car" exact>
-            <Car />
-          </Route>
-          <Route path="/beauty" exact>
-            <Beauty />
-          </Route>
-          <Route path="/technology" exact>
-            <Technologie />
-          </Route>
-          <Route path="/wellness" exact>
-            <Wellness />
-          </Route>
-          <Route path="/sports" exact>
-            <Sports />
-          </Route>
-        </Switch>
       </Router>
     </div>
   );

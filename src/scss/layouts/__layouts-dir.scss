@@ -5,9 +5,11 @@
   padding: 0;
   font-size: 18px;
 }
-.items {
-  width: 50%;
-  height: 50%;
+.item-page {
+  @include flexthing;
+  width: 90vw;
+  height: 60vh;
+  background-color: #c4e7c4;
 }
 body {
   @include flexthing;

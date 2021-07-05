@@ -21,3 +21,12 @@ a:active {
 input::placeholder {
   text-align: center;
 }
+button {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: none;
+}
+li {
+  list-style-type: none;
+}
