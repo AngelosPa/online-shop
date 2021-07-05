@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { useState, useContext } from "react";
 import Data from "../data.json";
-
+import ProductList from "./innercomponents/ProductList";
 import ProductItem from "./innercomponents/Productitem";
 import { StoreContext } from "../context";
 const HeroSection = () => {
@@ -17,6 +17,7 @@ const HeroSection = () => {
 
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
+    //store.lookUp();
     lookUp();
   };
   //for the searchbar -> RE CREATE IT INSIDE THE CONTEXT FOLDER
@@ -71,6 +72,7 @@ const HeroSection = () => {
         </ul>
       </nav>
       <h2>search for the products of your dreams </h2>
+
       <div className="searchbarteam">
         <form onSubmit={handleSubmit} class="searchBox">
           <input
@@ -85,9 +87,9 @@ const HeroSection = () => {
       </div>
 
       <div className="space-for-results">
-        {" "}
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
-        {/* <ProductList data={userInput ? filteredData : data} /> */}
+        {/* <ProductList data={userInput ? filteredData : store.data} /> */}
+        {userInput ? items : null}
         {/* <ProductList data={filteredData} addToCart={addToCart} /> */}
       </div>
     </div>

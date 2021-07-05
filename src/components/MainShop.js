@@ -1,6 +1,13 @@
 import React, { useState, useContext } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Store } from "../context";
 import ProductList from "./innercomponents/ProductList";
+import Beauty from "./innercomponents/Beauty";
+import Car from "./innercomponents/Car";
+import Kids from "./innercomponents/Kids";
+import Technologie from "./innercomponents/Technologie";
+import Wellness from "./innercomponents/Wellness";
+import Sports from "./innercomponents/Sports";
 const MainShop = () => {
   const [val, setVal] = useState(0);
 
@@ -22,12 +29,34 @@ const MainShop = () => {
           {/* <ProductList /> */}
         </div>
       </div>
-      <div className="item">for the kids</div>
-      <div className="item">for the car</div>
-      <div className="item">beauty products</div>
-      <div className="item">technology</div>
-      <div className="item">wellness and beauty</div>
-      <div className="item">Sports</div>
+      <Router>
+        <Switch>
+          <Route path="/kids" exact>
+            <Kids />
+            <div className="item">for the kids</div>
+          </Route>
+          <Route path="/car" exact>
+            <Car />
+            <div className="item">for the car</div>
+          </Route>
+          <Route path="/beauty" exact>
+            <Beauty />
+            <div className="item">beauty products</div>
+          </Route>
+          <Route path="/technology" exact>
+            <Technologie />
+            <div className="item">technology</div>
+          </Route>
+          <Route path="/wellness" exact>
+            <Wellness />
+            <div className="item">wellness</div>
+          </Route>
+          <Route path="/sports" exact>
+            <Sports />
+            <div className="item">Sports</div>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
