@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Store, StoreContext } from "./context";
 import Beauty from "./components/innercomponents/Beauty";
 import Car from "./components/innercomponents/Car";
@@ -19,6 +19,9 @@ const App = () => {
         <HeroSection />
         <Router>
           <Switch>
+            <Route path="/" exact>
+              <MainShop />
+            </Route>
             <Route path="/kids" exact>
               <Kids />
             </Route>
@@ -33,10 +36,6 @@ const App = () => {
             </Route>
             <Route path="/wellness" exact>
               <Wellness />
-            </Route>
-
-            <Route path="/" exact>
-              <MainShop />
             </Route>
           </Switch>
         </Router>
