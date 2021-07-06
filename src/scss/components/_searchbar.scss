@@ -1,6 +1,4 @@
 .search-bar {
-  input {
-  }
 }
 .searchInput {
   width: 27vw;
@@ -9,18 +7,14 @@
 }
 .search-btn {
   width: 3vw;
-  border: 2px red dashed;
+  //border: 2px red dashed;
   background-color: green;
+  border-radius: 20%;
 }
 .searchInput:focus {
   outline: none;
 }
-.search-bar input,
-.search-btn,
-.search-btn:before,
-.search-btn:after {
-  transition: all 0.25s ease-out;
-}
+
 .search-bar input,
 .search-btn {
   height: 5vh;

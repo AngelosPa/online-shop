@@ -6,7 +6,7 @@ function Technologie() {
       <Link className="item" to="/">
         <button>back to main MENU</button>
       </Link>
-      im technology
+      adtebsty
     </div>
   );
 }

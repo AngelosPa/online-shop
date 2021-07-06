@@ -2,10 +2,11 @@
 import React, { useState, useContext } from "react";
 import Data from "../data.json";
 import { Link } from "react-router-dom";
+import { IconButton } from "@material-ui/core/";
 import ProductItem from "./innercomponents/Productitem";
 
 import { StoreContext } from "../context";
-
+import { FaSearch, FaChevronLeft } from "react-icons/fa";
 const HeroSection = () => {
   const [data, setData] = useState(Data);
   const [userInput, setUserInput] = useState("");
@@ -57,6 +58,7 @@ const HeroSection = () => {
       <h2>search for the products of your dreams </h2>
 
       <div className="searchbarteam">
+        {" "}
         <form onSubmit={handleSubmit} class="search-bar">
           <input
             type="search"
@@ -66,8 +68,15 @@ const HeroSection = () => {
             className="searchInput"
             placeholder="search ..."
           />
-          <input value="SEARCH" class="search-btn" type="submit" />
-        </form>
+
+          <IconButton>
+            {" "}
+            <button class="search-btn" type="submit">
+              {" "}
+              <FaSearch />
+            </button>
+          </IconButton>
+        </form>{" "}
       </div>
 
       <div className="space-for-results">
