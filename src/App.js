@@ -16,8 +16,9 @@ const App = () => {
   return (
     <StoreContext.Provider value={Store}>
       <div className="body-container">
-        <HeroSection />
         <Router>
+          <HeroSection />
+
           <Switch>
             <Route path="/" exact>
               <MainShop />
@@ -38,9 +39,9 @@ const App = () => {
               <Wellness />
             </Route>
           </Switch>
-        </Router>
 
-        <Footer />
+          <Footer />
+        </Router>
       </div>
     </StoreContext.Provider>
   );

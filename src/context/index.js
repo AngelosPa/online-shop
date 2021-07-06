@@ -11,9 +11,14 @@ const Store = {
     return this.cart.reduce((acc, cur) => acc + cur.price, 0);
   },
   addToCart: (item) => Store.cart.push(item),
-  //lookUp: function () {
-   // return "skjata";
- // },
+  lookUp: function (props) {
+    let productarr = Store.data.map((e) => e.productName);
+    let productpricearr = Store.data.map((item) => item.price);
+
+    let result = Store.data.filter((item) => item.productName.includes(props));
+
+    return result;
+  },
 };
 
 const StoreContext = React.createContext(Store);

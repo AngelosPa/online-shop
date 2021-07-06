@@ -24,23 +24,22 @@ const MainShop = () => {
           {/* <ProductList /> */}
         </div>
       </div>
-      <Router>
-        <Link className="item" to="/kids">
-          <p>For the Kids</p>
-        </Link>
-        <Link className="item" to="/car">
-          <p>Car accessories</p>
-        </Link>
-        <Link className="item" to="/beauty">
-          <p>Beauty Products</p>
-        </Link>
-        <Link className="item" to="/technology">
-          <p>all about technology</p>
-        </Link>
-        <Link className="item" to="/wellness">
-          <p>Wellness and Health</p>
-        </Link>
-      </Router>
+
+      <Link className="item" to="/kids">
+        <p>For the Kids</p>
+      </Link>
+      <Link className="item" to="/car">
+        <p>Car accessories</p>
+      </Link>
+      <Link className="item" to="/beauty">
+        <p>Beauty Products</p>
+      </Link>
+      <Link className="item" to="/technology">
+        <p>all about technology</p>
+      </Link>
+      <Link className="item" to="/wellness">
+        <p>Wellness and Health</p>
+      </Link>
     </div>
   );
 };

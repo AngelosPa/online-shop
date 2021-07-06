@@ -18,31 +18,16 @@ const HeroSection = () => {
 
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
-    //store.lookUp();
-    lookUp();
-  };
-  //for the searchbar -> RE CREATE IT INSIDE THE CONTEXT FOLDER
-  const lookUp = () => {
-    const userText = userInput.toLowerCase().trim();
-    const userTextLength = userText.length;
-    // const searchText = userText ? userText : "";
 
-    if (userTextLength === 0) {
-      console.log("input", userTextLength);
-      setFilteredData([]);
-    } else {
-      let newArr = data.filter((item) => {
-        const slicedProductName = item.productName.slice(0, userTextLength);
-        return slicedProductName === userText;
-      });
-      setFilteredData(newArr);
-    }
+    store.lookUp(userInput);
+    //lookUp();
   };
 
   // to stop the fort thing
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   return (
     <div className="hero-section">
       <nav>
@@ -89,8 +74,10 @@ const HeroSection = () => {
 
       <div className="space-for-results">
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
-        {/* <ProductList data={userInput ? filteredData : store.data} /> */}
-        {userInput ? items : null}
+        <ProductItem info={store.lookUp(userInput)} />
+        {/* <ProductItem { userInput ? store.lookUp(userInput) : null }/>
+         */}
+        {/* {userInput ? store.lookUp(userInput) : null} */}
         {/* <ProductList data={filteredData} addToCart={addToCart} /> */}
       </div>
     </div>
