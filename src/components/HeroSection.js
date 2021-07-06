@@ -1,7 +1,7 @@
 // import React from "react";
 import React, { useState, useContext } from "react";
 import Data from "../data.json";
-
+import Slideritem from "../components/innercomponents/Slideritem";
 import ProductItem from "./innercomponents/Productitem";
 import { StoreContext } from "../context";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ const HeroSection = () => {
   const store = useContext(StoreContext);
 
   const items = store.data.map((item, i) => (
-    <ProductItem key={i} info={item} addToCart={store.addToCart} />
+    <Slideritem key={i} info={item} addToCart={store.addToCart} />
   ));
 
   const changeHandle = (e) => {
@@ -74,10 +74,10 @@ const HeroSection = () => {
 
       <div className="space-for-results">
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
-        <ProductItem info={store.lookUp(userInput)} />
+
         {/* <ProductItem { userInput ? store.lookUp(userInput) : null }/>
          */}
-        {/* {userInput ? store.lookUp(userInput) : null} */}
+        {userInput ? <ProductItem info={store.lookUp(userInput)} /> : null}
         {/* <ProductList data={filteredData} addToCart={addToCart} /> */}
       </div>
     </div>
