@@ -18,21 +18,6 @@ const ProductItem = ({ info, addToCart }) => {
         : null}
     </>
   );
-
-  // <li key={id}>
-  //   {productName} <i>{icon}</i>
-  //   <h5>{price}€</h5>
-  //   <h6>{inventory} items in stock</h6>
-  //   <button
-  //     className="cardbutton"
-  //     disabled={inventory === 0}
-  //     onClick={() => {
-  //       addToCart(info);
-  //     }}
-  //   >
-  //     {inventory > 0 ? "Add to cart" : "Sold out"}
-  //   </button>
-  // </li>
 };
 
 export default ProductItem;

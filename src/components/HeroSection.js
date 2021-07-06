@@ -1,20 +1,17 @@
 // import React from "react";
 import React, { useState, useContext } from "react";
 import Data from "../data.json";
-import Slideritem from "../components/innercomponents/Slideritem";
-import ProductItem from "./innercomponents/Productitem";
-import { StoreContext } from "../context";
 import { Link } from "react-router-dom";
+import ProductItem from "./innercomponents/Productitem";
+
+import { StoreContext } from "../context";
+
 const HeroSection = () => {
   const [data, setData] = useState(Data);
   const [userInput, setUserInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [totalBill, setTotalBill] = useState(0);
   const store = useContext(StoreContext);
-
-  const items = store.data.map((item, i) => (
-    <Slideritem key={i} info={item} addToCart={store.addToCart} />
-  ));
 
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
@@ -60,15 +57,16 @@ const HeroSection = () => {
       <h2>search for the products of your dreams </h2>
 
       <div className="searchbarteam">
-        <form onSubmit={handleSubmit} class="searchBox">
+        <form onSubmit={handleSubmit} class="search-bar">
           <input
-            type="text"
+            type="search"
+            name="search"
             onChange={changeHandle}
             value={userInput}
             className="searchInput"
             placeholder="search ..."
           />
-          <input type="submit" value="SEARCH" className="searchButton" />
+          <input value="SEARCH" class="search-btn" type="submit" />
         </form>
       </div>
 

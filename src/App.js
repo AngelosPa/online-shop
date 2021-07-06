@@ -23,6 +23,9 @@ const App = () => {
             <Route path="/" exact>
               <MainShop />
             </Route>
+            {/* <Route path="/productlist" exact>
+              <ProductList />
+            </Route> */}
             <Route path="/kids" exact>
               <Kids />
             </Route>

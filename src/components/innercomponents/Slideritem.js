@@ -1,8 +1,7 @@
 import React from "react";
 
-const Slideritem = ({ info, contextObj }) => {
+const Slideritem = ({ info, addToCart }) => {
   const { id, productName, icon, price, inventory } = info;
-  console.log(info);
 
   return (
     <li key={id}>
@@ -12,9 +11,8 @@ const Slideritem = ({ info, contextObj }) => {
       <button
         disabled={inventory === 0}
         onClick={() => {
-          contextObj.setStore((prevState) => {
-            return { ...prevState, cart: [...prevState.cart, info] };
-          });
+          console.log(info);
+          addToCart(info);
         }}
       >
         {inventory > 0 ? "Add to cart" : "Sold out"}
