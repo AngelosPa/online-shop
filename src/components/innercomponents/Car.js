@@ -10,7 +10,7 @@ function Car() {
           <FaChevronLeft /> <p>back</p>
         </IconButton>
       </Link>
-      <Link className="item" to="/"></Link>
+      <div></div>
       im car
     </div>
   );

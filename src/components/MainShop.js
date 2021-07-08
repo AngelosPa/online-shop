@@ -25,9 +25,13 @@ const MainShop = () => {
         </div>
       </div>
       <div className="categories-slider">
-        <Link className="item" to="/car">
-          <p>Car accessories</p>
-        </Link>
+        {/* <Link className="item" to="/car"> */}
+        <button>⬅</button>
+        <p className="item  skt">Car accessories</p>
+        <p className="item skt">Car accessories</p>
+        <p className="item skt">Car accessories</p>
+        <button>➡</button>
+        {/* </Link> */}
       </div>
       <div className="categories-slider">
         <Link className="item" to="/kids">

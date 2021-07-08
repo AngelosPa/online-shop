@@ -117,13 +117,15 @@ body {
       @include flexthing;
       .item {
         @include flexthing;
-        width: 50%;
+        width: 30%;
         height: 90%;
         border: rgb(0, 0, 0) 2px solid;
         margin: 10px;
       }
     }
-
+    // .skt {
+    //   display: none;
+    // }
     .hadis-item {
       @include flexthing;
       width: 30%;
