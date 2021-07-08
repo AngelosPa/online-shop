@@ -5,17 +5,7 @@
   padding: 0;
   font-size: 18px;
 }
-iframe {
-  width: 90vw;
-  height: 60vh;
-  background-color: #c4e7c4;
-}
-.item-page {
-  @include flexthing;
-  width: 90vw;
-  height: 60vh;
-  background-color: #c4e7c4;
-}
+
 body {
   @include flexthing;
   flex-direction: column;
@@ -28,15 +18,42 @@ body {
   width: 100vw;
   height: auto;
   background-color: #e3f1e3;
-  //hero section par (navbar , searchbar , search results)
+  //hero section par (navbar , searchbar , search results hamburger menu)
+  .hamburgers-menus {
+    width: 50px;
+    height: 50px;
+
+    color: black;
+  }
+  //for the hamburger menu section
+  .hamburger-menu-container {
+    @include flexthing;
+    ul {
+      @include flexthing;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100vw;
+      height: 10vh;
+      background-color: #004b00;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100vw;
+      height: 95vh;
+    }
+    p {
+      border-bottom: 1px black solid;
+
+      padding: 10%;
+    }
+  }
   .hero-section {
     nav {
       @include flexthing;
       justify-content: space-between;
-      .hamburgers-menus {
-        width: 100px;
-        height: 100px;
-      }
 
       height: 30%;
       background-color: #007e00;
@@ -49,7 +66,6 @@ body {
     .searchbarteam {
       @include flexthing;
     }
-
     ul {
       @include flexthing;
       justify-content: space-around;
@@ -57,7 +73,6 @@ body {
 
       width: 80vw;
     }
-
     .space-for-results {
       background-color: rgb(45, 100, 45);
 
@@ -70,11 +85,15 @@ body {
       // height: 5rem;
     }
   }
-
+  .cardbutton {
+    background-color: green !important;
+    padding: 0.3rem;
+  }
   .mainmenu {
     @include flexthing;
+    flex-direction: column;
     width: 100vw;
-    height: 58vh;
+    height: 100vh;
     .carusel {
       @include flexthing;
       //  border: 2px rgb(97, 87, 87) solid;
@@ -88,19 +107,37 @@ body {
         border: none;
       }
       width: 100%;
-      height: 80%;
+      height: 10%;
     }
-    .cardbutton {
-      background-color: green !important;
-      padding: 0.3rem;
+    .categories-slider {
+      border: 2px rgb(177, 169, 169) solid;
+
+      width: 80%;
+      height: 10%;
+      @include flexthing;
+      .item {
+        @include flexthing;
+        width: 50%;
+        height: 90%;
+        border: rgb(0, 0, 0) 2px solid;
+        margin: 10px;
+      }
     }
-    .item {
+
+    .hadis-item {
       @include flexthing;
       width: 30%;
       height: 30%;
       border: rgb(0, 0, 0) 2px solid;
       margin: 10px;
     }
+  }
+  //for the pages on categories
+  .item-page {
+    @include flexthing;
+    width: 90vw;
+    height: 60vh;
+    background-color: #c4e7c4;
   }
   footer {
     @include flexthing;
@@ -109,14 +146,18 @@ body {
     background-color: #004b00;
   }
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//RESPONSIVE DESIGN
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 @media only screen and (max-width: 500px) {
   .body-container {
     flex-direction: column;
     width: 100vw;
     height: auto;
 
-    //hero section par (navbar , searchbar , search results)
+    //hero section par (navbar , searchbar , search results hamburger)
     .hero-section {
       display: flex;
       flex-direction: column;

@@ -12,8 +12,8 @@ const Store = {
   },
   addToCart: (item) => Store.cart.push(item),
   lookUp: function (props) {
-    let productarr = Store.data.map((e) => e.productName);
-    let productpricearr = Store.data.map((item) => item.price);
+    // let productarr = Store.data.map((e) => e.productName);
+    // let productpricearr = Store.data.map((item) => item.price);
 
     let result = Store.data.filter((item) => item.productName.includes(props));
 

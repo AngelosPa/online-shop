@@ -7,13 +7,17 @@ import ProductItem from "./innercomponents/Productitem";
 
 import { StoreContext } from "../context";
 import { FaSearch, FaChevronLeft } from "react-icons/fa";
+
+import { MdMenu } from "react-icons/md";
 const HeroSection = () => {
   const [data, setData] = useState(Data);
   const [userInput, setUserInput] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+
   const [totalBill, setTotalBill] = useState(0);
   const store = useContext(StoreContext);
-
+  const menuHandle = () => {
+    console.log("skata");
+  };
   const changeHandle = (e) => {
     setUserInput(() => e.target.value);
 
@@ -29,13 +33,11 @@ const HeroSection = () => {
   return (
     <div className="hero-section">
       <nav>
-        <div className="hamburgers-menus">
-          <div className="hamburgerstyle-menu">
-            <div className="first-l"></div>
-            <div className="sec-l"></div>
-            <div className="thr-l"></div>
-          </div>
-        </div>
+        <Link className="item" to="/hamburgermenu">
+          <IconButton>
+            <MdMenu className="hamburgers-menus" onClick={menuHandle} />
+          </IconButton>
+        </Link>
 
         <ul>
           <li>
@@ -54,11 +56,15 @@ const HeroSection = () => {
             </div>
           </li>
         </ul>
-      </nav>
+        {/* shopify pass */}
+        {/* _LGG;E_g#W4D;Pq */}
+        {/* api key =
+          ec0290dfeb1d604804e75d35827a0d83 */}
+        {/* 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 */}
+      </nav>{" "}
+      <div className={3 > 1 ? "hamburger-container" : "invisible-menu"}></div>
       <h2>search for the products of your dreams </h2>
-
       <div className="searchbarteam">
-        {" "}
         <form onSubmit={handleSubmit} class="search-bar">
           <input
             type="search"
@@ -78,7 +84,6 @@ const HeroSection = () => {
           </IconButton>
         </form>{" "}
       </div>
-
       <div className="space-for-results">
         {/* this one displays everything and if the user typews something displays only that i want it to soplay only when the user rights */}
 
