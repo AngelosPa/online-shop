@@ -10,6 +10,7 @@ const Store = {
   bill: function () {
     return this.cart.reduce((acc, cur) => acc + cur.price, 0);
   },
+
   addToCart: (item) => Store.cart.push(item),
   lookUp: function (props) {
     // let productarr = Store.data.map((e) => e.productName);

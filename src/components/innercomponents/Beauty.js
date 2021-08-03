@@ -14,7 +14,7 @@ function Beauty() {
           <FaChevronLeft /> <p>back</p>
         </IconButton>
       </Link>
-      <Link className="item" to="/"></Link>
+      
       im beauty
     </div>
   );

@@ -10,7 +10,7 @@ function Wellness() {
           <FaChevronLeft /> <p>back</p>
         </IconButton>
       </Link>
-      <Link className="item" to="/"></Link>
+     
       im Wellness
     </div>
   );

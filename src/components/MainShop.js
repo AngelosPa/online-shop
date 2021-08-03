@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../context";
 import ProductList from "./innercomponents/ProductList";
-
+import Sliderlinks from "./Sliderlinks";
 const MainShop = () => {
   const [val, setVal] = useState(0);
+  const [catval, setCatal] = useState(true);
 
   return (
     <div className="mainmenu">
@@ -27,9 +28,10 @@ const MainShop = () => {
       <div className="categories-slider">
         {/* <Link className="item" to="/car"> */}
         <button>⬅</button>
-        <p className="item  skt">Car accessories</p>
-        <p className="item skt">Car accessories</p>
-        <p className="item skt">Car accessories</p>
+        <Sliderlinks />
+        {/* <p className="item  skt">Car accessories</p>
+        <p className="item skt">Car accessories2</p>
+        <p className="item skt">Car accessories3</p> */}
         <button>➡</button>
         {/* </Link> */}
       </div>
